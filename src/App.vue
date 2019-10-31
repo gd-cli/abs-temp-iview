@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <h2>欢迎来到高登世德</h2>
   </div>
 </template>
 
