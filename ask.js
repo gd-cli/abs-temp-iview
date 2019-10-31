@@ -8,6 +8,7 @@ module.exports = [
     type: 'input',
     name: 'author',
     message: 'author?',
+    default: 'goldenstand',
   },
   {
     type: 'input',
@@ -18,5 +19,6 @@ module.exports = [
     type: 'input',
     name: 'license',
     message: 'license?',
+    default: 'ISC',
   },
 ];
