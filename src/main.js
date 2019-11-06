@@ -1,14 +1,10 @@
 import Vue from 'vue';
-import ElementUI from 'element-ui';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import './plugins/iview';
 import i18n from './i18n';
 
-// import './plugins/element';
-import './theme/theme.scss';
-
-Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
 new Vue({

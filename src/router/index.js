@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Home from '../views/Home/index.vue';
+import loadable from '@/utils/loadable';
 
 Vue.use(VueRouter);
 
@@ -12,12 +13,13 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: loadable(() => import(/* webpackChunkName: "about" */ '../views/About/index.vue')),
   },
 ];
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes,
 });
 

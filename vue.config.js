@@ -5,6 +5,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const BASE_URL = isProduction ? '/dist/' : '/';
 module.exports = {
   publicPath: BASE_URL, // 打包后的路径
+  assetsDir: 'static',
   chainWebpack: (config) => { // 修改webpcak原来配置
     // config.output.chunkFilename = '[name].min.js';
     // 关闭入口最大限制提示
@@ -14,10 +15,17 @@ module.exports = {
     config.resolve.alias.set('_c', resolve('src/components'));
     config.resolve.alias.set('_v', resolve('src/views'));
   },
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
   pluginOptions: {
     i18n: {
-      locale: 'en',
-      fallbackLocale: 'en',
+      locale: 'zh',
+      fallbackLocale: 'zh',
       localeDir: 'locales',
       enableInSFC: false,
     },
